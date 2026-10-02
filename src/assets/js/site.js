@@ -224,8 +224,9 @@
     try {
       const res = await fetch(endpoint, {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
+        // URL-encoded is the format Netlify Forms documents for JavaScript submissions; most form services accept it too.
+        headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString(),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       track('generate_lead', {
