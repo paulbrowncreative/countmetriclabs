@@ -1,0 +1,122 @@
+---
+{
+  "title": "ISO 11171 Calibration Explained: A Practical Guide",
+  "h1": "ISO 11171 calibration, explained",
+  "description": "What ISO 11171 requires, why it replaced ISO 4402, what µm(c) means, how primary and secondary calibration differ, and what your calibration report should show.",
+  "nav": "resources",
+  "priority": 0.7,
+  "schemaType": "WebPage",
+  "breadcrumbs": [["Resources", "/resources/"], ["ISO 11171 explained", "/resources/iso-11171-calibration-explained/"]],
+  "article": {
+    "published": "2026-10-02",
+    "about": "ISO 11171 calibration of automatic particle counters for liquids"
+  }
+}
+---
+<!-- SME REVIEW: technical content on this page should be reviewed by the lab's technical lead before publishing. -->
+<header class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Guide · Calibration</p>
+    <h1>ISO 11171 calibration, explained</h1>
+    <p class="lede">What the standard requires, why it exists, and how to tell whether your particle counter's calibration will hold up when someone asks for the paperwork.</p>
+    <p class="article-meta"><span>Updated <time datetime="2026-10-02">2 October 2026</time></span><span>~8 min read</span><span>Reviewed against ISO 11171:2022</span></p>
+  </div>
+</header>
+
+<div class="container article-layout">
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what">What ISO 11171 is</a></li>
+      <li><a href="#why">Why it replaced ISO 4402</a></li>
+      <li><a href="#micron-c">What µm(c) means</a></li>
+      <li><a href="#primary-secondary">Primary vs secondary</a></li>
+      <li><a href="#covers">What a calibration covers</a></li>
+      <li><a href="#report">What your report should show</a></li>
+      <li><a href="#interval">How often to calibrate</a></li>
+      <li><a href="#online">Online counters</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+
+  <article class="prose">
+    <h2 id="what">What ISO 11171 is</h2>
+    <p><strong>ISO 11171, <cite>Hydraulic fluid power — Calibration of automatic particle counters for liquids</cite>,</strong> is the international standard for calibrating automatic particle counters (APCs) that analyze bottle samples of liquid. It's maintained by ISO technical committee TC&nbsp;131/SC&nbsp;6, the same group responsible for the ISO&nbsp;4406 cleanliness code. The current edition is ISO&nbsp;11171:2022.</p>
+    <p>The standard covers primary and secondary particle-sizing calibration for sizes of 1&nbsp;µm(c) and larger, sensor resolution and counting performance, acceptable operating limits, sensor verification with test dust, and coincidence and flow-rate limits. It applies to hydraulic fluids, aviation and diesel fuels, engine oils and other petroleum-based fluids.</p>
+    <p>In short: ISO&nbsp;11171 is what makes a particle count from one instrument comparable with a count from another.</p>
+
+    <h2 id="why">Why it replaced ISO 4402</h2>
+    <p>Before ISO&nbsp;11171, particle counters were calibrated to ISO&nbsp;4402 using AC Fine Test Dust (ACFTD). That approach had two problems. ACFTD stopped being produced in the early 1990s, and its size distribution had been established by optical microscopy measuring each particle's longest dimension, which couldn't be traced to a national measurement standard.</p>
+    <p>ISO&nbsp;11171 replaced it with ISO Medium Test Dust (ISO&nbsp;12103-1, A3) and, critically, with a certified reference material from the US National Institute of Standards and Technology: <strong>NIST Standard Reference Material 2806</strong>, a suspension of medium test dust in hydraulic fluid with a certified particle size distribution. That certification is what gives ISO&nbsp;11171 calibrations their traceability.</p>
+
+    <h2 id="micron-c">What µm(c) means</h2>
+    <p>The "(c)" in µm(c) indicates a particle size measured with an APC calibrated to ISO&nbsp;11171. NIST certifies SRM&nbsp;2806 in terms of the projected-area equivalent circle diameter of the particles, so a size of 6&nbsp;µm(c) refers to a particle whose projected area equals that of a 6&nbsp;µm circle.</p>
+    <p>Because the sizing basis changed, sizes under the old and new methods don't match one-for-one. When ISO&nbsp;4406 was revised to use ISO&nbsp;11171 sizes, its reporting channels moved to 4, 6 and 14&nbsp;µm(c), chosen so that codes remain broadly comparable with those produced at the old 2, 5 and 15&nbsp;µm channels.</p>
+    <div class="callout"><p><strong>Practical consequence:</strong> if your instrument or a supplier's lab still reports to the old method, cleanliness codes aren't directly comparable with ISO&nbsp;11171-based results. Ask which method produced any code you're relying on.</p></div>
+
+    <h2 id="primary-secondary">Primary vs secondary calibration</h2>
+    <p>ISO&nbsp;11171 defines two routes to a traceable sizing calibration. Both are legitimate. They differ in the reference suspension used.</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="ps2-caption">
+      <table>
+        <caption id="ps2-caption">Primary and secondary calibration compared</caption>
+        <thead><tr><th scope="col"><span class="visually-hidden">Aspect</span></th><th scope="col">Primary</th><th scope="col">Secondary</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Reference</th><td>NIST SRM 2806 suspension</td><td>Calibration suspensions whose size distribution was verified with a primary-calibrated APC</td></tr>
+          <tr><th scope="row">Traceability</th><td>Directly to NIST</td><td>To NIST via the primary calibration</td></tr>
+          <tr><th scope="row">Cost and availability</th><td>Higher; SRM supply is limited</td><td>Lower; suited to routine work</td></tr>
+          <tr><th scope="row">Common use</th><td>Reference instruments and labs that produce secondary suspensions</td><td>Routine calibration of working lab and portable counters</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>For most working instruments, a properly documented secondary calibration is the norm. What matters is that the chain back to NIST is recorded: which suspension, which lot, and how it was verified.</p>
+
+    <h2 id="covers">What a full ISO 11171 calibration covers</h2>
+    <p>Sizing is the headline, but a calibration that stops at the curve leaves important questions unanswered. A complete ISO&nbsp;11171 calibration also establishes whether the instrument is fit to use and under what conditions.</p>
+    <ul>
+      <li><strong>Preliminary checks.</strong> Sample volume accuracy and threshold noise level, so the measurement system itself isn't distorting results.</li>
+      <li><strong>Sizing calibration.</strong> A calibration curve relating the sensor's threshold settings to particle size in µm(c).</li>
+      <li><strong>Resolution.</strong> How sharply the sensor distinguishes particles of similar size. Poor resolution smears counts between channels.</li>
+      <li><strong>Coincidence error limit.</strong> The concentration above which two or more particles in the sensing zone at once are counted as one larger particle. Samples above this limit must be diluted.</li>
+      <li><strong>Flow-rate limits.</strong> The range of flow rates over which sizing and counting remain within tolerance.</li>
+      <li><strong>Sensor performance verification.</strong> A check with test dust that the calibrated instrument counts as expected.</li>
+    </ul>
+    <p>The exact procedures and acceptance criteria are in the standard itself, which is available from ISO and national standards bodies.</p>
+
+    <h2 id="report">What your calibration report should show</h2>
+    <p>If a customer, auditor or warranty investigator asks how a cleanliness code was produced, the calibration report is your evidence. At minimum, look for:</p>
+    <ul class="checklist">
+      <li>The ISO 11171 edition used and whether calibration was primary or secondary</li>
+      <li>Identity and lot numbers of the reference suspensions, with a traceability statement</li>
+      <li>The calibration curve or threshold settings for each size channel</li>
+      <li>Measured resolution, coincidence limit and working flow-rate range</li>
+      <li>As-found results before adjustment, and as-left results after</li>
+      <li>Instrument identity, date, conditions and the people who performed and reviewed the work</li>
+    </ul>
+    <p>A certificate that shows only "PASS" and a date gives you very little to defend a result with.</p>
+
+    <h2 id="interval">How often should a particle counter be calibrated?</h2>
+    <p>Many quality programs use an annual interval. Recalibration is also prudent after a sensor is repaired or replaced, after significant changes to the fluid system, or whenever verification checks or comparisons suggest drift. Your own quality procedure, or your customer's requirement, is what governs.</p>
+    <p>The as-found result from each calibration is the best evidence for whether your interval is right. If as-found results are consistently within limits, your interval is working. If they're not, shorten it.</p>
+
+    <h2 id="online">What about online particle counters?</h2>
+    <p>ISO&nbsp;11171 addresses APCs that analyze bottle samples. Online automatic particle counting systems, including those used in filter testing, are covered by ISO&nbsp;11943, which describes methods for online secondary calibration and validation.</p>
+
+    <aside class="inline-cta" aria-labelledby="guide-cta">
+      <h2 id="guide-cta">Need a calibration you can defend?</h2>
+      <p>We calibrate liquid APCs to ISO&nbsp;11171 and report as-found and as-left data, reference lots and performance limits.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/contact/?service=calibration" data-track="cta_click" data-cta="guide-11171">Request a calibration quote</a>
+        <a class="btn btn-ghost-invert" href="/services/apc-calibration/">See calibration scope</a>
+      </div>
+    </aside>
+
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li><a href="https://www.iso.org/standard/82850.html" rel="noopener">ISO 11171:2022 — Calibration of automatic particle counters for liquids</a> (iso.org)</li>
+      <li><a href="https://www.iso.org/standard/79716.html" rel="noopener">ISO 4406:2021 — Method for coding the level of contamination by solid particles</a> (iso.org)</li>
+      <li><a href="https://tsapps.nist.gov/srmext/certificates/2806d.pdf" rel="noopener">NIST SRM 2806d certificate — Medium Test Dust in Hydraulic Fluid</a> (nist.gov, PDF)</li>
+      <li><a href="https://www.iso.org/standard/79717.html" rel="noopener">ISO 11943:2021 — Online automatic particle-counting systems</a> (iso.org)</li>
+    </ul>
+    <p>Related: <a href="/resources/iso-4406-cleanliness-codes/">How to read an ISO 4406 cleanliness code</a> · <a href="/accreditation/">Calibration, traceability and accreditation</a></p>
+  </article>
+</div>

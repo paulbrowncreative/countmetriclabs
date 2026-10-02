@@ -1,0 +1,40 @@
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="CountMetric Labs home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <rect x="1.5" y="1.5" width="29" height="29" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <rect x="7" y="9" width="4" height="15" fill="currentColor"/>
+        <rect x="14" y="14" width="4" height="10" fill="currentColor"/>
+        <rect x="21" y="19" width="4" height="5" class="brand-mark-accent"/>
+      </svg>
+      <span class="brand-word">CountMetric<span class="brand-sub">Labs</span></span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span class="menu-toggle-bars" aria-hidden="true"></span>
+      <span class="menu-toggle-label">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary" data-nav-panel>
+      <ul class="nav-list">
+        <li class="nav-item has-sub">
+          <a class="nav-link" href="/services/" data-nav="services">Services</a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services" data-sub-toggle>
+            <span class="visually-hidden">Show service pages</span>
+            <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </button>
+          <ul class="sub-menu" id="sub-services">
+            <li><a href="/services/apc-calibration/"><strong>APC calibration</strong><span>ISO 11171 sizing &amp; performance verification</span></a></li>
+            <li><a href="/services/fluid-particle-counting/"><strong>Fluid particle counting</strong><span>ISO 4406 &amp; AS4059 cleanliness reporting</span></a></li>
+            <li><a href="/services/apc-consulting/"><strong>APC technical consulting</strong><span>Method, troubleshooting &amp; audit support</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="/industries/" data-nav="industries">Industries</a></li>
+        <li class="nav-item"><a class="nav-link" href="/accreditation/" data-nav="accreditation">Accreditation</a></li>
+        <li class="nav-item"><a class="nav-link" href="/resources/" data-nav="resources">Resources</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact/" data-nav="contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary nav-cta" href="/contact/?service=calibration" data-track="cta_click" data-cta="header">Request a quote</a>
+    </nav>
+  </div>
+</header>

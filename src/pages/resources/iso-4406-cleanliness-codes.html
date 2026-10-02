@@ -1,0 +1,170 @@
+---
+{
+  "title": "ISO 4406 Cleanliness Codes Explained + Calculator",
+  "h1": "How to read an ISO 4406 cleanliness code",
+  "description": "What a code like 18/16/13 means, the full ISO 4406 scale-number table, a free code calculator, and how ISO 4406 compares with SAE AS4059 and NAS 1638.",
+  "nav": "resources",
+  "priority": 0.7,
+  "breadcrumbs": [["Resources", "/resources/"], ["ISO 4406 codes explained", "/resources/iso-4406-cleanliness-codes/"]],
+  "article": {
+    "published": "2026-10-02",
+    "about": "ISO 4406 fluid cleanliness codes"
+  }
+}
+---
+<!-- SME REVIEW: technical content on this page should be reviewed by the lab's technical lead before publishing. -->
+<header class="page-hero">
+  <div class="container">
+    <p class="eyebrow">Guide · Cleanliness</p>
+    <h1>How to read an ISO 4406 cleanliness code</h1>
+    <p class="lede">Three numbers that summarize how many particles are in a millilitre of fluid. Here's how they're built, what moving one number means, and a calculator to convert your own counts.</p>
+    <p class="article-meta"><span>Updated <time datetime="2026-10-02">2 October 2026</time></span><span>~6 min read</span><span>Reviewed against ISO 4406:2021</span></p>
+  </div>
+</header>
+
+<div class="container article-layout">
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#anatomy">Anatomy of a code</a></li>
+      <li><a href="#calculator">Code calculator</a></li>
+      <li><a href="#table">Scale-number table</a></li>
+      <li><a href="#doubling">What one step means</a></li>
+      <li><a href="#rules">Reporting rules</a></li>
+      <li><a href="#compare">ISO 4406 vs AS4059 vs NAS 1638</a></li>
+      <li><a href="#trust">When to question a code</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+
+  <article class="prose">
+    <h2 id="anatomy">Anatomy of an ISO 4406 code</h2>
+    <p><strong>ISO 4406</strong> expresses fluid cleanliness as three scale numbers separated by slashes, for example <strong>18/16/13</strong>. Each number represents the count of particles per millilitre at or above a given size, measured with an automatic particle counter calibrated to ISO&nbsp;11171:</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="anat-caption">
+      <table>
+        <caption id="anat-caption">Reading the code 18/16/13</caption>
+        <thead><tr><th scope="col">Position</th><th scope="col">Particle size</th><th scope="col">Scale number</th><th scope="col">Particles per mL</th></tr></thead>
+        <tbody>
+          <tr><td>First</td><td class="num">≥4 µm(c)</td><td class="num">18</td><td class="num">&gt;1,300 to 2,500</td></tr>
+          <tr><td>Second</td><td class="num">≥6 µm(c)</td><td class="num">16</td><td class="num">&gt;320 to 640</td></tr>
+          <tr><td>Third</td><td class="num">≥14 µm(c)</td><td class="num">13</td><td class="num">&gt;40 to 80</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The counts are cumulative: the ≥4&nbsp;µm(c) figure includes every particle at 6 and 14&nbsp;µm(c) too. That's why the first number is always the largest.</p>
+    <p>When particles are counted by microscope rather than an APC, ISO&nbsp;4406 uses a two-part code for ≥5&nbsp;µm and ≥15&nbsp;µm, written with a dash in the first position, for example <code>-/16/13</code>.</p>
+
+    <h2 id="calculator">ISO 4406 code calculator</h2>
+    <p>Enter cumulative counts per millilitre from your particle counter report to get the ISO 4406 code.</p>
+    <form class="form-card calc" data-iso-calc novalidate aria-labelledby="calc-title">
+      <h3 id="calc-title" class="mt-0">Convert counts to an ISO 4406 code</h3>
+      <div class="field-grid calc-grid">
+        <div class="field"><label for="c4">≥4 µm(c) <span class="optional">per mL</span></label><input id="c4" name="c4" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 2100"></div>
+        <div class="field"><label for="c6">≥6 µm(c) <span class="optional">per mL</span></label><input id="c6" name="c6" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 610"></div>
+        <div class="field"><label for="c14">≥14 µm(c) <span class="optional">per mL</span></label><input id="c14" name="c14" type="number" inputmode="decimal" min="0" step="any" placeholder="e.g. 62"></div>
+      </div>
+      <div class="calc-result" aria-live="polite">
+        <span class="calc-label">ISO 4406 code</span>
+        <output class="calc-code mono" for="c4 c6 c14" data-calc-output>–/–/–</output>
+        <p class="calc-note" data-calc-note>Enter counts per mL to calculate.</p>
+      </div>
+      <noscript><p class="calc-note">The calculator needs JavaScript. Use the scale-number table below instead.</p></noscript>
+    </form>
+    <p class="muted">The calculator applies the scale-number ranges only. It doesn't apply the low-count "≥" rule below, because that depends on the raw number of particles counted, not the per-mL concentration.</p>
+
+    <h2 id="table">ISO 4406 scale-number table</h2>
+    <p>Each scale number covers a range of particles per millilitre, from "more than" the lower limit "up to and including" the upper limit.</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="scale-caption">
+      <table>
+        <caption id="scale-caption">ISO 4406 scale numbers (rows used in the 18/16/13 example highlighted)</caption>
+        <thead><tr><th scope="col">Scale number</th><th scope="col" class="num">More than (per mL)</th><th scope="col" class="num">Up to and including</th></tr></thead>
+        <tbody>
+<tr><td class="num">0</td><td class="num">0</td><td class="num">0.01</td></tr>
+<tr><td class="num">1</td><td class="num">0.01</td><td class="num">0.02</td></tr>
+<tr><td class="num">2</td><td class="num">0.02</td><td class="num">0.04</td></tr>
+<tr><td class="num">3</td><td class="num">0.04</td><td class="num">0.08</td></tr>
+<tr><td class="num">4</td><td class="num">0.08</td><td class="num">0.16</td></tr>
+<tr><td class="num">5</td><td class="num">0.16</td><td class="num">0.32</td></tr>
+<tr><td class="num">6</td><td class="num">0.32</td><td class="num">0.64</td></tr>
+<tr><td class="num">7</td><td class="num">0.64</td><td class="num">1.3</td></tr>
+<tr><td class="num">8</td><td class="num">1.3</td><td class="num">2.5</td></tr>
+<tr><td class="num">9</td><td class="num">2.5</td><td class="num">5</td></tr>
+<tr><td class="num">10</td><td class="num">5</td><td class="num">10</td></tr>
+<tr><td class="num">11</td><td class="num">10</td><td class="num">20</td></tr>
+<tr><td class="num">12</td><td class="num">20</td><td class="num">40</td></tr>
+<tr class="is-highlight"><td class="num">13</td><td class="num">40</td><td class="num">80</td></tr>
+<tr><td class="num">14</td><td class="num">80</td><td class="num">160</td></tr>
+<tr><td class="num">15</td><td class="num">160</td><td class="num">320</td></tr>
+<tr class="is-highlight"><td class="num">16</td><td class="num">320</td><td class="num">640</td></tr>
+<tr><td class="num">17</td><td class="num">640</td><td class="num">1,300</td></tr>
+<tr class="is-highlight"><td class="num">18</td><td class="num">1,300</td><td class="num">2,500</td></tr>
+<tr><td class="num">19</td><td class="num">2,500</td><td class="num">5,000</td></tr>
+<tr><td class="num">20</td><td class="num">5,000</td><td class="num">10,000</td></tr>
+<tr><td class="num">21</td><td class="num">10,000</td><td class="num">20,000</td></tr>
+<tr><td class="num">22</td><td class="num">20,000</td><td class="num">40,000</td></tr>
+<tr><td class="num">23</td><td class="num">40,000</td><td class="num">80,000</td></tr>
+<tr><td class="num">24</td><td class="num">80,000</td><td class="num">160,000</td></tr>
+<tr><td class="num">25</td><td class="num">160,000</td><td class="num">320,000</td></tr>
+<tr><td class="num">26</td><td class="num">320,000</td><td class="num">640,000</td></tr>
+<tr><td class="num">27</td><td class="num">640,000</td><td class="num">1,300,000</td></tr>
+<tr><td class="num">28</td><td class="num">1,300,000</td><td class="num">2,500,000</td></tr>
+<tr><td class="num">&gt;28</td><td class="num">2,500,000</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="doubling">What one step on the scale means</h2>
+    <p>Each step up the scale roughly <strong>doubles</strong> the particle concentration. Going from 16/14/11 to 18/16/13 isn't "a bit dirtier": it's about four times as many particles at every size.</p>
+    <p>That's why cleanliness targets are worth taking seriously, and why a calibration drift that shifts sizing slightly can move a code by a full step without any change in the fluid.</p>
+
+    <h2 id="rules">Reporting rules worth knowing</h2>
+    <ul>
+      <li><strong>Low counts are flagged.</strong> When fewer than 20 particles were actually counted at a size, the scale number for that size is marked with "≥" to show reduced statistical confidence, for example <code>14/12/≥7</code>.</li>
+      <li><strong>The code is a summary.</strong> Two fluids with the same code can have different size distributions within each range. For trending and troubleshooting, ask for the raw counts.</li>
+      <li><strong>Method matters.</strong> A code is only comparable with another if both counters are calibrated to ISO&nbsp;11171 and samples were handled the same way.</li>
+    </ul>
+
+    <h2 id="compare">ISO 4406 vs SAE AS4059 vs NAS 1638</h2>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="cmp-caption">
+      <table>
+        <caption id="cmp-caption">Cleanliness coding systems compared</caption>
+        <thead><tr><th scope="col"><span class="visually-hidden">Aspect</span></th><th scope="col">ISO 4406</th><th scope="col">SAE AS4059</th><th scope="col">NAS 1638</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Common in</th><td>Industrial hydraulics, lubrication</td><td>Aerospace hydraulics and fuel</td><td>Legacy aerospace and defense specs</td></tr>
+          <tr><th scope="row">Volume basis</th><td>Per mL</td><td>Per 100 mL</td><td>Per 100 mL</td></tr>
+          <tr><th scope="row">Counting</th><td>Cumulative</td><td>Cumulative or differential</td><td>Differential</td></tr>
+          <tr><th scope="row">Sizes</th><td>≥4, ≥6, ≥14 µm(c)</td><td>Size codes A–F, &gt;4 to &gt;70 µm(c)</td><td>5–15 µm up to &gt;100 µm (five ranges)</td></tr>
+          <tr><th scope="row">Status</th><td>Current (2021 edition)</td><td>Current (revision G)</td><td>Superseded by AS4059 for new work</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Because the size bases and counting methods differ, there's no exact conversion between systems. Published cross-reference charts are approximations. If you're moving a specification from NAS&nbsp;1638 to ISO&nbsp;4406 or AS4059, set the new limits from measured data rather than a lookup table.</p>
+
+    <h2 id="trust">When to question a cleanliness code</h2>
+    <ul>
+      <li>The code jumped by two or more steps with no change to the system or filtration.</li>
+      <li>Repeat tests of the same bottle differ by more than a step.</li>
+      <li>Two labs report different codes for the same fluid.</li>
+      <li>The counter's last ISO&nbsp;11171 calibration is overdue or undocumented.</li>
+      <li>The sample was hazy, wet or dark, any of which can distort light-extinction counting.</li>
+    </ul>
+
+    <aside class="inline-cta" aria-labelledby="guide-cta">
+      <h2 id="guide-cta">Need an independent particle count?</h2>
+      <p>Send a sample for ISO 4406 or SAE AS4059 reporting, or ask us to investigate a result that doesn't add up.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/contact/?service=testing" data-track="cta_click" data-cta="guide-4406">Request sample testing</a>
+        <a class="btn btn-ghost-invert" href="/services/fluid-particle-counting/">See testing details</a>
+      </div>
+    </aside>
+
+    <h2 id="sources">Sources and further reading</h2>
+    <ul>
+      <li><a href="https://www.iso.org/standard/79716.html" rel="noopener">ISO 4406:2021 — Method for coding the level of contamination by solid particles</a> (iso.org)</li>
+      <li><a href="https://www.iso.org/standard/82850.html" rel="noopener">ISO 11171:2022 — Calibration of automatic particle counters for liquids</a> (iso.org)</li>
+      <li><a href="https://www.iso.org/standard/77244.html" rel="noopener">ISO 11500:2022 — Particulate contamination by automatic particle counting using the light-extinction principle</a> (iso.org)</li>
+      <li><a href="https://saemobilus.sae.org/content/AS4059G" rel="noopener">SAE AS4059G — Aerospace fluid power contamination classification</a> (sae.org)</li>
+    </ul>
+    <p>Related: <a href="/resources/iso-11171-calibration-explained/">ISO 11171 calibration, explained</a> · <a href="/services/fluid-particle-counting/">Fluid particle counting service</a></p>
+  </article>
+</div>

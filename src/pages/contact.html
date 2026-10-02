@@ -1,0 +1,201 @@
+---
+{
+  "title": "Request a Calibration or Testing Quote | CountMetric Labs",
+  "description": "Request a quote for ISO 11171 particle counter calibration, fluid particle count testing or APC consulting. A technician reviews every inquiry personally.",
+  "nav": "contact",
+  "priority": 0.8,
+  "breadcrumbs": [["Contact", "/contact/"]]
+}
+---
+<header class="page-hero page-hero-compact">
+  <div class="container">
+    <p class="eyebrow">Request a quote</p>
+    <h1>Tell us what you need to measure</h1>
+    <p class="lede mb-0">About two minutes. A technician reviews every inquiry and replies with scope, instructions and pricing, or tells you plainly if we're not the right fit.</p>
+  </div>
+</header>
+
+<div class="container form-layout">
+  <div>
+    <div data-form-status hidden tabindex="-1"></div>
+
+    <form class="form-card" id="inquiry-form" name="inquiry" method="post" action="{{formEndpoint}}"
+          data-inquiry-form data-netlify="true" netlify-honeypot="company_website" data-fallback-email="{{contactEmail}}" novalidate>
+      <input type="hidden" name="form-name" value="inquiry">
+      <p class="hp" aria-hidden="true"><label>Leave this field empty <input name="company_website" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="error-summary" data-error-summary tabindex="-1" role="alert" hidden>
+        <h2>Please fix the following:</h2>
+        <ul></ul>
+      </div>
+
+      <fieldset class="form-section">
+        <legend>What do you need?</legend>
+        <div class="choice-grid" role="radiogroup" aria-describedby="err-service">
+          <div class="choice">
+            <input type="radio" id="svc-cal" name="service" value="calibration" required data-message="Choose the service you need.">
+            <label for="svc-cal"><strong>APC calibration</strong><span>ISO 11171 calibration of a particle counter</span></label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="svc-test" name="service" value="testing">
+            <label for="svc-test"><strong>Fluid sample testing</strong><span>Particle counts on bottle samples</span></label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="svc-con" name="service" value="consulting">
+            <label for="svc-con"><strong>Technical consulting</strong><span>Troubleshooting, methods or audit support</span></label>
+          </div>
+          <div class="choice">
+            <input type="radio" id="svc-other" name="service" value="other">
+            <label for="svc-other"><strong>Something else</strong><span>A question, or not sure yet</span></label>
+          </div>
+        </div>
+        <p class="field-error" id="err-service" data-error-for="service" hidden><span></span></p>
+      </fieldset>
+
+      <fieldset class="form-section conditional" data-when-service="calibration" hidden>
+        <legend>About your instrument<span class="hint-legend">So we can confirm compatibility before you ship.</span></legend>
+        <div class="field-grid field-grid-2">
+          <div class="field">
+            <label for="instrument">Particle counter make and model</label>
+            <input type="text" id="instrument" name="instrument" required aria-describedby="err-instrument hint-instrument" autocomplete="off">
+            <p class="hint" id="hint-instrument">For example, the manufacturer and model on the front panel or label.</p>
+            <p class="field-error" id="err-instrument" data-error-for="instrument" hidden><span></span></p>
+          </div>
+          <div class="field">
+            <label for="units">Number of instruments <span class="optional">(optional)</span></label>
+            <input type="number" id="units" name="units" min="1" inputmode="numeric" aria-describedby="err-units">
+            <p class="field-error" id="err-units" data-error-for="units" hidden><span></span></p>
+          </div>
+          <div class="field">
+            <label for="last_cal">Last calibrated <span class="optional">(optional)</span></label>
+            <select id="last_cal" name="last_cal">
+              <option value="">Select</option>
+              <option>Within the last year</option>
+              <option>1–2 years ago</option>
+              <option>More than 2 years ago</option>
+              <option>Never / don't know</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section conditional" data-when-service="testing" hidden>
+        <legend>About your samples</legend>
+        <div class="field-grid field-grid-2">
+          <div class="field">
+            <label for="fluid">Fluid type</label>
+            <select id="fluid" name="fluid" required aria-describedby="err-fluid" data-message="Choose the fluid type, or select Other.">
+              <option value="">Select</option>
+              <option>Hydraulic fluid (mineral)</option>
+              <option>Hydraulic fluid (synthetic / fire-resistant)</option>
+              <option>Lubricating oil</option>
+              <option>Fuel</option>
+              <option>Other</option>
+            </select>
+            <p class="field-error" id="err-fluid" data-error-for="fluid" hidden><span></span></p>
+          </div>
+          <div class="field">
+            <label for="samples">Approximate number of samples <span class="optional">(optional)</span></label>
+            <input type="number" id="samples" name="samples" min="1" inputmode="numeric" aria-describedby="err-samples">
+            <p class="field-error" id="err-samples" data-error-for="samples" hidden><span></span></p>
+          </div>
+        </div>
+        <fieldset class="form-section subfieldset">
+          <legend>Reporting format <span class="optional">(optional, choose any)</span></legend>
+          <div class="check-row">
+            <div class="check"><input type="checkbox" id="fmt-iso" name="format" value="ISO 4406"><label for="fmt-iso">ISO 4406</label></div>
+            <div class="check"><input type="checkbox" id="fmt-as" name="format" value="SAE AS4059"><label for="fmt-as">SAE AS4059</label></div>
+            <div class="check"><input type="checkbox" id="fmt-nas" name="format" value="NAS 1638"><label for="fmt-nas">NAS 1638</label></div>
+            <div class="check"><input type="checkbox" id="fmt-raw" name="format" value="Raw counts"><label for="fmt-raw">Raw counts</label></div>
+            <div class="check"><input type="checkbox" id="fmt-unsure" name="format" value="Not sure"><label for="fmt-unsure">Not sure</label></div>
+          </div>
+        </fieldset>
+      </fieldset>
+
+      <fieldset class="form-section conditional" data-when-service="consulting" hidden>
+        <legend>About the problem</legend>
+        <div class="field">
+          <label for="problem">What are you seeing?</label>
+          <textarea id="problem" name="problem" required aria-describedby="hint-problem err-problem" data-message="Briefly describe the problem so we can scope it."></textarea>
+          <p class="hint" id="hint-problem">For example: "Our counter reads two codes higher than our supplier's lab on the same fluid."</p>
+          <p class="field-error" id="err-problem" data-error-for="problem" hidden><span></span></p>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Your details</legend>
+        <div class="field-grid field-grid-2">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" aria-describedby="err-name" data-message="Enter your name.">
+            <p class="field-error" id="err-name" data-error-for="name" hidden><span></span></p>
+          </div>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" spellcheck="false" aria-describedby="err-email" data-message="Enter your work email so we can reply.">
+            <p class="field-error" id="err-email" data-error-for="email" hidden><span></span></p>
+          </div>
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" required autocomplete="organization" aria-describedby="err-company" data-message="Enter your company name.">
+            <p class="field-error" id="err-company" data-error-for="company" hidden><span></span></p>
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Anything else?</legend>
+        <div class="field-grid">
+          <div class="field">
+            <label for="message">Details, questions or deadlines <span class="optional">(optional)</span></label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <div class="field">
+            <label for="timeline">When do you need this? <span class="optional">(optional)</span></label>
+            <select id="timeline" name="timeline">
+              <option value="">Select</option>
+              <option>As soon as possible</option>
+              <option>Within a month</option>
+              <option>In 1–3 months</option>
+              <option>Just researching</option>
+            </select>
+          </div>
+          <!-- CLIENT CONFIRM: remove if the early-access program has closed. -->
+          <div class="check">
+            <input type="checkbox" id="early_access" name="early_access" value="yes">
+            <label for="early_access">I'm interested in the early-access partner program</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-footer">
+        <button class="btn btn-primary btn-lg" type="submit"><span data-label>Send inquiry</span></button>
+        <p class="privacy-note">We use your details only to respond to this inquiry. No mailing lists, no sharing. <a href="/privacy/">Privacy policy</a>.</p>
+      </div>
+    </form>
+  </div>
+
+  <aside class="aside-stack" aria-label="What to expect">
+    <div class="aside-box">
+      <h2>What happens next</h2>
+      <ol class="steps steps-compact">
+        <li><h3>A technician reviews your inquiry</h3><p>Not a sales team. Someone who can answer technical questions.</p></li>
+        <li><h3>We confirm fit</h3><p>Compatibility, method and scope, or a clear "this isn't for us".</p></li>
+        <li><h3>You get a written quote</h3><p>With price, turnaround and shipping or sampling instructions.</p></li>
+      </ol>
+    </div>
+    <div class="aside-box">
+      <h2>Good to know</h2>
+      <ul>
+        <li>No obligation. A quote commits you to nothing.</li>
+        <li>Please don't ship instruments or samples until we've replied with instructions.</li>
+        <li>We're not yet accredited. <a href="/accreditation/">See what that means</a>.</li>
+      </ul>
+    </div>
+    <!-- CLIENT INPUT: add direct email/phone in site.config.json; they then appear in the footer automatically. -->
+  </aside>
+</div>

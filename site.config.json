@@ -1,0 +1,13 @@
+{
+  "name": "CountMetric Labs",
+  "url": "https://www.countmetriclabs.com",
+  "locale": "en_US",
+  "themeColor": "#0f1b22",
+  "defaultOgImage": "/assets/img/og-default.png",
+  "formEndpoint": "",
+  "contact": {
+    "email": "",
+    "phone": "",
+    "address": null
+  }
+}
